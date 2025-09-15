@@ -1,6 +1,9 @@
 
 # The Art of Lifelong Learning & Technology Watch
 
+> "Any fool can know. The point is to understand."  
+> ― Albert Einstein
+
 As engineers, lifelong learning is not optional—it is the foundation of our relevance in a fast-moving technological world. Over time, I’ve realized that **learning itself is a skill**: the better we master it, the more effective our growth becomes.
 
 My strategy is built on a **four-phase cycle**: *Explore → Deep Dive → Apply → Reflect & Share*.

@@ -247,3 +247,4 @@ mlruns/
 .env.*
 .gitmessage.txt
 docker-compose.override.yml
+.webui_secret_key

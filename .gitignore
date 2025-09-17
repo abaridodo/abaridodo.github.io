@@ -7,7 +7,7 @@ ret_dataset/
 __pycache__/
 *.py[cod]
 *$py.class
-
+.webui_secret_key
 # C extensions
 *.so
 

@@ -3,34 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abari Dodo | AI & Embedded Systems Engineer</title>
+  <meta name="description" content="Abari Dodo - AI & Embedded Systems Engineer. Specializing in IoT, edge AI, and intelligent systems. Master's in AI, expertise in real-time vision and predictive models." />
+  <meta name="keywords" content="AI engineer, embedded systems, IoT, edge AI, machine learning, real-time vision, predictive models, open-source" />
+  <meta name="author" content="Abari Dodo" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Abari Dodo | AI & Embedded Systems Engineer" />
+  <meta property="og:description" content="Designing end-to-end intelligent systems from sensors to cloud AI with a focus on frugal, open-source, and impactful technologies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abaridodo.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abari Dodo | AI & Embedded Systems Engineer" />
+  <meta name="twitter:description" content="Designing end-to-end intelligent systems from sensors to cloud AI." />
+  
+  <title>Abari Dodo | AI & Embedded Systems Engineer | IoT & Edge AI Expert</title>
+  <link rel="canonical" href="https://abaridodo.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
-    /* Global reset */
+    :root {
+      --bg-primary: #f9fafb;
+      --bg-secondary: #ffffff;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --accent: #3b82f6;
+      --accent-dark: #2563eb;
+      --border: #e5e7eb;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --accent: #60a5fa;
+      --accent-dark: #3b82f6;
+      --border: #334155;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Inter", Arial, sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background-color: #f9fafb;
-      color: #1f2937;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       padding: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      color: var(--accent);
     }
 
     .container {
-      background: #ffffff;
+      background: var(--bg-secondary);
       padding: 40px;
       border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow);
       max-width: 700px;
       text-align: center;
+      animation: fadeIn 0.6s ease;
+      transition: background-color 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .photo {
@@ -38,83 +117,189 @@
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #3b82f6;
+      border: 3px solid var(--accent);
       margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.05);
     }
 
     h1 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: #111827;
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
 
     h2 {
-      font-size: 1rem;
-      color: #6b7280;
-      margin-bottom: 20px;
-      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     p {
       text-align: justify;
-      line-height: 1.6;
+      line-height: 1.8;
       font-size: 1rem;
+      margin-bottom: 28px;
+      color: var(--text-secondary);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
       margin-bottom: 25px;
+    }
+
+    .skill-tag {
+      background: var(--accent);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    [data-theme="dark"] .skill-tag {
+      background: var(--accent-dark);
     }
 
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 24px;
+      margin-bottom: 25px;
     }
 
     .social-icons a {
-      color: #374151;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
+      color: var(--text-secondary);
+      font-size: 1.6rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-primary);
     }
 
     .social-icons a:hover {
-      color: #3b82f6;
+      color: var(--accent);
+      transform: translateY(-3px);
+      background: var(--border);
     }
 
     .more-link {
-      margin-top: 15px;
       display: inline-block;
-      color: #3b82f6;
+      color: var(--accent);
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      padding: 12px 24px;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      transition: all 0.3s ease;
     }
 
     .more-link:hover {
-      text-decoration: underline;
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 0.95rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .theme-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
   <div class="container">
-    <img src="assets/abari.jpg" alt="Abari Dodo" class="photo" />
+    <img src="assets/abari.jpg" alt="Abari Dodo - AI and Embedded Systems Engineer" class="photo" />
     <h1>Abari Dodo</h1>
     <h2>AI & Embedded Systems Engineer</h2>
+    
+    <div class="skills">
+      <span class="skill-tag">AI/ML</span>
+      <span class="skill-tag">IoT</span>
+      <span class="skill-tag">Edge AI</span>
+      <span class="skill-tag">Embedded Systems</span>
+      <span class="skill-tag">Real-time Vision</span>
+      <span class="skill-tag">Open Source</span>
+    </div>
+
     <p>
       I am an AI & Embedded Systems Engineer driven by product vision and innovation. 
       I design end-to-end intelligent systems — from sensors to cloud AI — with a focus 
       on frugal, open-source, and impactful technologies. Specializing in IoT, edge AI, 
-      and embedded software, I hold a Master’s in AI (Université Lyon 1, France) and an 
+      and embedded software, I hold a Master's in AI (Université Lyon 1, France) and an 
       Engineering degree in Embedded Systems (ENSA Fès, Morocco). My work includes predictive 
       models, real-time vision systems, and platforms like AskThings, reflecting my commitment 
       to delivering scalable, resource-efficient solutions addressing real-world needs.
     </p>
 
     <div class="social-icons">
-      <a href="https://github.com/abaridodo" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://x.com/dodoabari" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com/in/abari-dodo-mamane-9a101118a" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/abaridodo" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/dodoabari" target="_blank" rel="noopener noreferrer" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/abari-dodo-mamane-9a101118a" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
 
-    <a class="more-link" href="https://pentagonal-character-9f5.notion.site/Abari-dbd86b5fc6eb473386a2b56e9f099134" target="_blank">
+    <a class="more-link" href="https://pentagonal-character-9f5.notion.site/Abari-dbd86b5fc6eb473386a2b56e9f099134" target="_blank" rel="noopener noreferrer">
       Learn more about me →
     </a>
   </div>
+
+  <script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const htmlElement = document.documentElement;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Load theme from memory (not localStorage)
+    let currentTheme = prefersDark ? 'dark' : 'light';
+    
+    const updateTheme = (theme) => {
+      currentTheme = theme;
+      htmlElement.setAttribute('data-theme', theme);
+      const icon = themeToggle.querySelector('i');
+      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    };
+
+    themeToggle.addEventListener('click', () => {
+      updateTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // Initialize theme based on system preference
+    updateTheme(currentTheme);
+  </script>
 </body>
 </html>
